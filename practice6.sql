@@ -1,27 +1,27 @@
 -- 1.
-select e1.employee_id as "»ç¹ø", e1.first_name as "ÀÌ¸§", d.department_name as "ºÎ¼­¸í", e2.first_name as "¸Å´ÏÀú"
+select e1.employee_id as "ì‚¬ë²ˆ", e1.first_name as "ì´ë¦„", d.department_name as "ë¶€ì„œëª…", e2.first_name as "ë§¤ë‹ˆì €"
   from employees e1, employees e2, departments d
     where e1.department_id = d.department_id and e1.employee_id = e2.manager_id;
 
 -- 2.
-select r.region_name as "Áö¿ª ÀÌ¸§", c.country_name as "³ª¶ó ÀÌ¸§" from countries c join regions r on r.region_id = c.region_id order by r.region_name, c.country_name;
+select r.region_name as "ì§€ì—­ ì´ë¦„", c.country_name as "ë‚˜ë¼ ì´ë¦„" from countries c join regions r on r.region_id = c.region_id order by r.region_name, c.country_name;
 
 -- 3.
-select d.department_id as "ºÎ¼­ ¹øÈ£", d.department_name as "ÀÌ¸§", e.first_name as "¸Å´ÏÀú", l.city as "µµ½Ã", c.COUNTRY_NAME as "³ª¶ó", r.REGION_NAME as "Áö¿ª"
+select d.department_id as "ë¶€ì„œ ë²ˆí˜¸", d.department_name as "ì´ë¦„", e.first_name as "ë§¤ë‹ˆì €", l.city as "ë„ì‹œ", c.COUNTRY_NAME as "ë‚˜ë¼", r.REGION_NAME as "ì§€ì—­"
   from departments d, employees e, locations l, countries c, regions r
     where d.manager_id = e.employee_id and d.location_id = l.location_id and l.country_id = c.country_id and c.REGION_ID = r.REGION_ID;
     
 -- 4.
-select e.employee_id as "»ç¹ø", (e.first_name || ' ' || e.last_name) as "Ç®³×ÀÓ"
+select e.employee_id as "ì‚¬ë²ˆ", (e.first_name || ' ' || e.last_name) as "í’€ë„¤ì„"
   from job_history jh , jobs j, employees e
     where e.employee_id = jh.employee_id and j.job_id = jh.job_id and j.job_title = 'Public Accountant';
     
 -- 5.
-select e.employee_id as "»ç¹ø", e.first_name as "ÀÌ¸§", e.last_name as "¼º", d.department_name as "ºÎ¼­"
+select e.employee_id as "ì‚¬ë²ˆ", e.first_name as "ì´ë¦„", e.last_name as "ì„±", d.department_name as "ë¶€ì„œ"
   from employees e join departments d on e.department_id = d.department_id order by e.last_name;
   
 -- 6.
-select e1.employee_id as "³ªÀÇ »ç¹ø", e1.last_name as "³ªÀÇ ÀÌ¸§", e1.hire_date as "³ªÀÇ °í¿ëÀÏ", e2.last_name as "¸Å´ÏÀú ÀÌ¸§", e2.hire_date as "¸Å´ÏÀú °í¿ëÀÏ"
+select e1.employee_id as "ë‚˜ì˜ ì‚¬ë²ˆ", e1.last_name as "ë‚˜ì˜ ì´ë¦„", e1.hire_date as "ë‚˜ì˜ ê³ ìš©ì¼", e2.last_name as "ë§¤ë‹ˆì € ì´ë¦„", e2.hire_date as "ë§¤ë‹ˆì € ê³ ìš©ì¼"
   from EMPLOYEES e1 join EMPLOYEES e2 on e1.EMPLOYEE_ID = e2.manager_id and e1.HIRE_DATE < e2.HIRE_DATE;
 
 

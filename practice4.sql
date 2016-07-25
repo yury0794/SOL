@@ -2,36 +2,36 @@ desc employees;
 
 select lower('database system') from dual;
 select upper('database system') from dual;
-select initcap('database system') from dual; -- ´Ü¾î ¸Ç ¾ÕÀÇ ±ÛÀÚ¸¦ ´ë¹®ÀÚ·Î
+select initcap('database system') from dual; -- ë‹¨ì–´ ë§¨ ì•ì˜ ê¸€ìë¥¼ ëŒ€ë¬¸ìë¡œ
 
-select concat('data', 'base') from dual; -- 'data'|| 'base'¿Í °°´Ù *
+select concat('data', 'base') from dual; -- 'data'|| 'base'ì™€ ê°™ë‹¤ *
 
 select substr('database', 2, 5) from dual;
 
 select length('database') from dual; -- *
 
-select instr('database', 'ba') from dual; -- ba°¡ ¸î¹øÂ°¿¡ ³ª¿À´Â°¡
+select instr('database', 'ba') from dual; -- baê°€ ëª‡ë²ˆì§¸ì— ë‚˜ì˜¤ëŠ”ê°€
 
 select first_name, lpad(salary,10,'*') from employees; 
-select first_name, Rpad(salary,10,'*') from employees; -- ÃÑ 10Ä­, *À¸·Î °ø¹é Ã¤¿ì±â
+select first_name, Rpad(salary,10,'*') from employees; -- ì´ 10ì¹¸, *ìœ¼ë¡œ ê³µë°± ì±„ìš°ê¸°
 
 select trim('#' from'###database###') from dual;
-select trim(' ' from'   data base   ') from dual; -- ±ÛÀÚ °¡¿îµ¥´Â Á¦°Å ¾ÈÇÔ
+select trim(' ' from'   data base   ') from dual; -- ê¸€ì ê°€ìš´ë°ëŠ” ì œê±° ì•ˆí•¨
 
-select abs(-20000) from dual; -- Àı´ñ°ª
-select floor(2.65) from dual; -- °¡Àå ±ÙÁ¢ÇÑ ¼ö¿¡¼­ ÀÌ ¼öº¸´Ù ÀÛÁö¸¸ °¡Àå Å« Á¤¼ö
-select ceil(2.65) from dual; -- °¡Àå ±ÙÁ¢ÇÑ ¼ö¿¡¼­ ÀÌ ¼öº¸´Ù Å©°í °¡Àå ÀÛÀº Á¤¼ö
-select power(2,10) from dual; -- Á¦°ö±Ù
-select trunc(3.145677, 2) from dual; -- ¼Ò¼öÁ¡ ¹Ø ÀÚ¸´¼ö Ç¥½Ã
+select abs(-20000) from dual; -- ì ˆëŒ“ê°’
+select floor(2.65) from dual; -- ê°€ì¥ ê·¼ì ‘í•œ ìˆ˜ì—ì„œ ì´ ìˆ˜ë³´ë‹¤ ì‘ì§€ë§Œ ê°€ì¥ í° ì •ìˆ˜
+select ceil(2.65) from dual; -- ê°€ì¥ ê·¼ì ‘í•œ ìˆ˜ì—ì„œ ì´ ìˆ˜ë³´ë‹¤ í¬ê³  ê°€ì¥ ì‘ì€ ì •ìˆ˜
+select power(2,10) from dual; -- ì œê³±ê·¼
+select trunc(3.145677, 2) from dual; -- ì†Œìˆ˜ì  ë°‘ ìë¦¿ìˆ˜ í‘œì‹œ
 
 select first_name, hire_date from employees;
 select first_name, to_char(hire_date, 'yyyy-mm-dd pm hh:mi:ss') from employees; -- *
 select FIRST_NAME, to_char(HIRE_DATE, 'yyyy-mm-dd')as "hd" from employees where '2007'<='hd';
-select to_char(sysdate,'yyyy-mm-dd hh:mi:ss') from dual; -- * Áö±İ ½Ã°£À» ½ºÆ®¸µÀ¸·Î ¹Ù²ãÁÜ
-select to_date('2007-12-10', 'yyyy-mm-dd') from dual; -- * ½ºÆ®¸µÀ» ³¯Â¥·Î ¹Ù²ãÁÜ
+select to_char(sysdate,'yyyy-mm-dd hh:mi:ss') from dual; -- * ì§€ê¸ˆ ì‹œê°„ì„ ìŠ¤íŠ¸ë§ìœ¼ë¡œ ë°”ê¿”ì¤Œ
+select to_date('2007-12-10', 'yyyy-mm-dd') from dual; -- * ìŠ¤íŠ¸ë§ì„ ë‚ ì§œë¡œ ë°”ê¿”ì¤Œ
 
-select first_name, to_char(salary, '999,999') from employees; -- ¼ıÀÚ »çÀÌ , Âï±â
-select first_name, to_char(salary, 'L999,999') from employees; -- LÀº ¿øÈ­
+select first_name, to_char(salary, '999,999') from employees; -- ìˆ«ì ì‚¬ì´ , ì°ê¸°
+select first_name, to_char(salary, 'L999,999') from employees; -- Lì€ ì›í™”
 select to_char(-100, '99999MI') from dual;
 select to_char(-100, '99999PR') from dual;
 
@@ -51,12 +51,12 @@ select first_name, job_id, salary,
     when 'AD_VP' then salary*1.1
     when 'FI_MGI' then salary*1.5
     else salary
-  end as "ÀÌ¹ø´Ş ¿ù±Ş"
-from employees; -- if¹® case
+  end as "ì´ë²ˆë‹¬ ì›”ê¸‰"
+from employees; -- ifë¬¸ case
 
 select first_name, job_id, salary,
   decode(job_id, 'AD_VP',  salary*1.1,
                  'FI_MGR', salary*1.5,
                            salary)
-  as "ÀÌ¹ø´Ş ¿ù±Ş"
-from employees; -- if¹® decode
+  as "ì´ë²ˆë‹¬ ì›”ê¸‰"
+from employees; -- ifë¬¸ decode

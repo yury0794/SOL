@@ -14,7 +14,7 @@ select (first_name || ' ' || last_name) AS "full name" from employees where sala
 
 select job_id from jobs where job_title = 'President';
 
-select first_name, job_id from employees where job_id <> 'AD PRES'; /* 'AD PRES'¸¦ Á¦¿ÜÇÏ°í Ãâ·Â */
+select first_name, job_id from employees where job_id <> 'AD PRES'; /* 'AD PRES'ë¥¼ ì œì™¸í•˜ê³  ì¶œë ¥ */
 
 select * from locations where city = 'Roma';
 
@@ -24,27 +24,27 @@ select * from departments;
 
 select * from departments where location_id in(1700, 1800);
 
-select * from departments where location_id = 1700 or location_id = 1800; /* À§¶û °°À½ */
+select * from departments where location_id = 1700 or location_id = 1800; /* ìœ„ë‘ ê°™ìŒ */
 
 select * from departments where location_id not in(1700, 1800);
 
-select * from departments where location_id <> 1700 And location_id <> 1800; /* À§¶û °°À½ */
+select * from departments where location_id <> 1700 And location_id <> 1800; /* ìœ„ë‘ ê°™ìŒ */
 
 select * from employees where salary between 1000 and 10000;
 
 select * from employees where 1000 <= salary and salary <= 10000;
 
-select first_name from employees where first_name like 'A%'; /* A·Î ½ÃÀÛÇÏ´Â ÀÌ¸§ */
+select first_name from employees where first_name like 'A%'; /* Aë¡œ ì‹œì‘í•˜ëŠ” ì´ë¦„ */
 
-select first_name from employees where first_name like '%s'; /* s·Î ³¡³ª´Â ÀÌ¸§ */
+select first_name from employees where first_name like '%s'; /* së¡œ ëë‚˜ëŠ” ì´ë¦„ */
 
 select first_name from employees where first_name like '%li%';
 
-select first_name from employees where first_name like 'A___'; /* _´Â ±ÛÀÚ¼ö Á¦ÇÑ */
+select first_name from employees where first_name like 'A___'; /* _ëŠ” ê¸€ììˆ˜ ì œí•œ */
 
 select employee_id, commission_pct from employees where commission_pct is not null;
 
-select first_name, last_name, salary from employees order by salary desc; /* ±âº»ÀÌ ³»¸² Â÷¼ø asc, desc´Â ¿À¸§ Â÷¼ø */
+select first_name, last_name, salary from employees order by salary desc; /* ê¸°ë³¸ì´ ë‚´ë¦¼ ì°¨ìˆœ asc, descëŠ” ì˜¤ë¦„ ì°¨ìˆœ */
 
 select first_name, last_name, salary from employees order by salary desc, first_name asc;
 

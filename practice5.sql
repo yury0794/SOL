@@ -1,6 +1,6 @@
 -- join
 select e.first_name, d.department_id, d.department_name from employees e, departments d
-  where e.department_id = d.department_id and e.salary > 5000; -- Á¶°Ç µÎ°³ (table ¼ö -1°³ÀÇ Á¶°ÇÀÌ ¹İµå½Ã ÇÊ¿äÇÔ)
+  where e.department_id = d.department_id and e.salary > 5000; -- ì¡°ê±´ ë‘ê°œ (table ìˆ˜ -1ê°œì˜ ì¡°ê±´ì´ ë°˜ë“œì‹œ í•„ìš”í•¨)
   
 -- inner join
 -- equi join
@@ -10,23 +10,23 @@ select a.first_name, b.department_name from employees a, departments b where a.d
 select * from employees a, jobs b where a.salary between b.min_salary and b. max_salary;
 
 -- self join
-select a.first_name, b.first_name from employees a, employees b where b.employee_id = a.manager_id; -- ´õ ³ª¿À°Ô ÇÏ°í ½ÍÀº ÂÊ¿¡ +
+select a.first_name, b.first_name from employees a, employees b where b.employee_id = a.manager_id; -- ë” ë‚˜ì˜¤ê²Œ í•˜ê³  ì‹¶ì€ ìª½ì— +
 
 -- outer join
-select a.first_name as "»ç¿ø", nvl(b.first_name, '¾øÀ½') as "¸Å´ÏÀú" from employees a, employees b where b.employee_id (+) = a.manager_id; -- ´õ ³ª¿À°Ô ÇÏ°í ½ÍÀº ÂÊ¿¡ +
+select a.first_name as "ì‚¬ì›", nvl(b.first_name, 'ì—†ìŒ') as "ë§¤ë‹ˆì €" from employees a, employees b where b.employee_id (+) = a.manager_id; -- ë” ë‚˜ì˜¤ê²Œ í•˜ê³  ì‹¶ì€ ìª½ì— +
 select a.first_name, b.department_name from employees a, departments b where b.department_id (+)= a.department_id;
 
 -- natural join
--- µÎ°³ÀÇ Á¶ÀÎ Á¶°ÇÀÌ ÀÇµµÇÏÁö ¾Ê¾Ò´Âµ¥ °É¸²
+-- ë‘ê°œì˜ ì¡°ì¸ ì¡°ê±´ì´ ì˜ë„í•˜ì§€ ì•Šì•˜ëŠ”ë° ê±¸ë¦¼
 -- department_id, manager_id
-select a.first_name, b.department_name from employees a natural join departments b; -- Á¶°ÇÀÌ ¾ø¾îµµ join °¡´É, µÎ Å×ÀÌºíÀÇ Ä®·³ÀÌ¸§ÀÌ °°À»¶§
+select a.first_name, b.department_name from employees a natural join departments b; -- ì¡°ê±´ì´ ì—†ì–´ë„ join ê°€ëŠ¥, ë‘ í…Œì´ë¸”ì˜ ì¹¼ëŸ¼ì´ë¦„ì´ ê°™ì„ë•Œ
 
 -- join ~ using
 select a.first_name, b.department_name from employees a join departments b using(department_id);
 
 -- join ~ on
 select a.first_name, b.department_name from employees a join departments b on a.department_id = b.department_id;
--- select a.first_name, b.department_name from employees a, departments b where b.department_id = a.department_id;¿Í °°À½
+-- select a.first_name, b.department_name from employees a, departments b where b.department_id = a.department_id;ì™€ ê°™ìŒ
 
 -- left outer
 select a.first_name, b.department_name from employees a left outer join departments b on a.department_id = b.department_id;

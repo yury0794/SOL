@@ -1,32 +1,30 @@
 -- 1.
-select (first_name || ' ' ||last_name) as "ÀÌ¸§", email as "ÀÌ¸ŞÀÏ", phone_number as "ÀüÈ­¹øÈ£" from EMPLOYEES order by hire_date asc;
+select (first_name || ' ' ||last_name) as "ì´ë¦„", email as "ì´ë©”ì¼", phone_number as "ì „í™”ë²ˆí˜¸" from EMPLOYEES order by hire_date asc;
 
 -- 2.
 select JOB_TITLE, max_salary from JOBS order by max_salary desc;
 
 -- 3.
-select count(*) as "¸Å´ÏÀú ¾ø´Â Á÷¿ø" from employees where manager_id is null;
+select count(*) as "ë§¤ë‹ˆì € ì—†ëŠ” ì§ì›" from employees where manager_id is null;
 
 -- 4.
 select * from jobs order by JOB_TITLE desc, MAX_SALARY desc;
 
 -- 5.
-select count(department_id) as "ºÎ¼­ ÃÑ ¼ö"from DEPARTMENTS;
+select count(department_id) as "ë¶€ì„œ ì´ ìˆ˜"from DEPARTMENTS;
 
 -- 6.
 select department_name from DEPARTMENTS order by length(department_name) desc;
 
 -- 7.
-select count(*) as "¸Å´ÏÀú ¾ø´Â ºÎ¼­" from departments where MANAGER_ID is null;
+select count(*) as "ë§¤ë‹ˆì € ì—†ëŠ” ë¶€ì„œ" from departments where MANAGER_ID is null;
 
 -- 8. 
 select upper(COUNTRY_NAME)  from COUNTRIES order by COUNTRY_NAME;
 
 -- 9. 
-select count(*) as "Áö¿ª ¼ö" from REGIONS;
+select count(*) as "ì§€ì—­ ìˆ˜" from REGIONS;
 select * from REGIONS order by length(region_name);
 
 -- 10.
 SELECT distinct(LOWER(city)) FROM locations;
-
-

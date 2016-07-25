@@ -2,18 +2,18 @@ SELECT EMPLOYEE_ID, SALARY, COMMISSION_PCT FROM employees;
 
 select first_name, last_name from employees;
 
-select first_name "ÀÌ¸§" from employees; -- °¡´ÉÇÏ¸é ""¸¦ ºÙÀÎ´Ù. as(alias)°¡ »ı·«µÇ¾ú´Ù
+select first_name "ì´ë¦„" from employees; -- ê°€ëŠ¥í•˜ë©´ ""ë¥¼ ë¶™ì¸ë‹¤. as(alias)ê°€ ìƒëµë˜ì—ˆë‹¤
 
-select (first_name || ' ' || last_name) as "name" from employees; -- ¹®ÀÚ¿­ ÇÕÄ¡±â ||
+select (first_name || ' ' || last_name) as "name" from employees; -- ë¬¸ìì—´ í•©ì¹˜ê¸° ||
 
 select 2+3 from dual;
 
 select (salary + salary*0.5) as "salary" from employees;
 
-select employee_id, commission_pct, nvl(salary+commission_pct, 0)from employees; -- nullvalue(°¡Á®¿À°í ½ÍÀº °ªÀÌ nullÀÌ¸é, ÀÌ °ªÀ¸·Î Ç¥½ÃÇØ¶ó)
+select employee_id, commission_pct, nvl(salary+commission_pct, 0)from employees; -- nullvalue(ê°€ì ¸ì˜¤ê³  ì‹¶ì€ ê°’ì´ nullì´ë©´, ì´ ê°’ìœ¼ë¡œ í‘œì‹œí•´ë¼)
 
-select employee_id, 1000, sysdate from employees; -- Áö±İ ³¯Â¥
+select employee_id, 1000, sysdate from employees; -- ì§€ê¸ˆ ë‚ ì§œ
 
-select '¼ºÀº' || last_name || 'ÀÌ¿ä, ÀÌ¸§Àº' || first_name || 'ÀÌ´Ù' from employees;
+select 'ì„±ì€' || last_name || 'ì´ìš”, ì´ë¦„ì€' || first_name || 'ì´ë‹¤' from employees;
 
-select first_name, salary from employees where employee_id = 200; -- employees Å×ÀÌºí¿¡¼­ employee_id°¡ 200ÀÎ »ç¶÷ÀÇ first_name, salary¸¦ Ç¥½ÃÇØ¶ó
+select first_name, salary from employees where employee_id = 200; -- employees í…Œì´ë¸”ì—ì„œ employee_idê°€ 200ì¸ ì‚¬ëŒì˜ first_name, salaryë¥¼ í‘œì‹œí•´ë¼
