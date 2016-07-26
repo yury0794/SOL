@@ -52,11 +52,11 @@ select first_name, job_id, salary,
     when 'FI_MGI' then salary*1.5
     else salary
   end as "이번달 월급"
-from employees; -- if문 case
+from employees; -- java의 if문과 같은 case
 
 select first_name, job_id, salary,
   decode(job_id, 'AD_VP',  salary*1.1,
                  'FI_MGR', salary*1.5,
                            salary)
   as "이번달 월급"
-from employees; -- if문 decode
+from employees; -- java의 if문과 같은 decode
