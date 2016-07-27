@@ -1,30 +1,60 @@
 -- 1.
-select (first_name || ' ' ||last_name) as "이름", email as "이메일", phone_number as "전화번호" from EMPLOYEES order by hire_date asc;
+
+  SELECT (first_name || ' ' || last_name) AS "이름",
+         email                          AS "이메일",
+         phone_number                   AS "전화번호"
+    FROM EMPLOYEES
+ORDER BY hire_date ASC;
 
 -- 2.
-select JOB_TITLE, max_salary from JOBS order by max_salary desc;
+
+  SELECT JOB_TITLE, max_salary
+    FROM JOBS
+ORDER BY max_salary DESC;
 
 -- 3.
-select count(*) as "매니저 없는 직원" from employees where manager_id is null;
+
+SELECT COUNT (*) AS "매니저 없는 직원"
+  FROM employees
+ WHERE manager_id IS NULL;
 
 -- 4.
-select * from jobs order by JOB_TITLE desc, MAX_SALARY desc;
+
+  SELECT *
+    FROM jobs
+ORDER BY JOB_TITLE DESC, MAX_SALARY DESC;
 
 -- 5.
-select count(department_id) as "부서 총 수"from DEPARTMENTS;
+
+SELECT COUNT (department_id) AS "부서 총 수" FROM DEPARTMENTS;
 
 -- 6.
-select department_name from DEPARTMENTS order by length(department_name) desc;
+
+  SELECT department_name
+    FROM DEPARTMENTS
+ORDER BY LENGTH (department_name) DESC;
 
 -- 7.
-select count(*) as "매니저 없는 부서" from departments where MANAGER_ID is null;
 
--- 8. 
-select upper(COUNTRY_NAME)  from COUNTRIES order by COUNTRY_NAME;
+SELECT COUNT (*) AS "매니저 없는 부서"
+  FROM departments
+ WHERE MANAGER_ID IS NULL;
 
--- 9. 
-select count(*) as "지역 수" from REGIONS;
-select * from REGIONS order by length(region_name);
+-- 8.
+
+  SELECT UPPER (COUNTRY_NAME)
+    FROM COUNTRIES
+ORDER BY COUNTRY_NAME;
+
+-- 9.
+
+SELECT COUNT (*) AS "지역 수" FROM REGIONS;
+
+  SELECT *
+    FROM REGIONS
+ORDER BY LENGTH (region_name);
 
 -- 10.
-SELECT distinct(LOWER(city)) FROM locations;
+
+SELECT DISTINCT (LOWER (city))
+  FROM locations;

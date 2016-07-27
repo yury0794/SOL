@@ -1,63 +1,103 @@
-select * from jobs;
+SELECT * FROM jobs;
 
-select * from departments;
+SELECT * FROM departments;
 
-select * from locations;
+SELECT * FROM locations;
 
-select * from job_history;
+SELECT * FROM job_history;
 
-select first_name, last_name from employees where employee_id = 101;
+SELECT first_name, last_name
+  FROM employees
+ WHERE employee_id = 101;
 
-select * from job_history where employee_id = 101;
+SELECT *
+  FROM job_history
+ WHERE employee_id = 101;
 
-select (first_name || ' ' || last_name) AS "full name" from employees where salary > 20000;
+SELECT (first_name || ' ' || last_name) AS "full name"
+  FROM employees
+ WHERE salary > 20000;
 
-select job_id from jobs where job_title = 'President';
+SELECT job_id
+  FROM jobs
+ WHERE job_title = 'President';
 
-select first_name, job_id from employees where job_id <> 'AD PRES'; /* 'AD PRES'를 제외하고 출력 */
+SELECT first_name, job_id
+  FROM employees
+ WHERE job_id <> 'AD PRES';
 
-select * from locations where city = 'Roma';
+                                                                    /* 'AD PRES'를 제외하고 출력 */
 
-select * from departments where location_id = 1000;
+SELECT *
+  FROM locations
+ WHERE city = 'Roma';
 
-select * from departments;
+SELECT *
+  FROM departments
+ WHERE location_id = 1000;
 
-select * from departments where location_id in(1700, 1800);
+SELECT * FROM departments;
 
-select * from departments where location_id = 1700 or location_id = 1800; /* 위랑 같음 */
+SELECT *
+  FROM departments
+ WHERE location_id IN (1700, 1800);
 
-select * from departments where location_id not in(1700, 1800);
+SELECT *
+  FROM departments
+ WHERE location_id = 1700 OR location_id = 1800;
 
-select * from departments where location_id <> 1700 And location_id <> 1800; /* 위랑 같음 */
+                                                                          /* 위랑 같음 */
 
-select * from employees where salary between 1000 and 10000;
+SELECT *
+  FROM departments
+ WHERE location_id NOT IN (1700, 1800);
 
-select * from employees where 1000 <= salary and salary <= 10000;
+SELECT *
+  FROM departments
+ WHERE location_id <> 1700 AND location_id <> 1800;
 
-select first_name from employees where first_name like 'A%'; /* A로 시작하는 이름 */
+                                                                             /* 위랑 같음 */
 
-select first_name from employees where first_name like '%s'; /* s로 끝나는 이름 */
+SELECT *
+  FROM employees
+ WHERE salary BETWEEN 1000 AND 10000;
 
-select first_name from employees where first_name like '%li%';
+SELECT *
+  FROM employees
+ WHERE 1000 <= salary AND salary <= 10000;
 
-select first_name from employees where first_name like 'A___'; /* _는 글자수 제한 */
+SELECT first_name
+  FROM employees
+ WHERE first_name LIKE 'A%';
 
-select employee_id, commission_pct from employees where commission_pct is not null;
+                                                             /* A로 시작하는 이름 */
 
-select first_name, last_name, salary from employees order by salary desc; /* 기본이 내림 차순 asc, desc는 오름 차순 */
+SELECT first_name
+  FROM employees
+ WHERE first_name LIKE '%s';
 
-select first_name, last_name, salary from employees order by salary desc, first_name asc;
+                                                             /* s로 끝나는 이름 */
 
+SELECT first_name
+  FROM employees
+ WHERE first_name LIKE '%li%';
 
+SELECT first_name
+  FROM employees
+ WHERE first_name LIKE 'A___';
 
+                                                               /* _는 글자수 제한 */
 
+SELECT employee_id, commission_pct
+  FROM employees
+ WHERE commission_pct IS NOT NULL;
 
+  SELECT first_name, last_name, salary
+    FROM employees
+ORDER BY salary DESC;
 
+                                                                          /* 기본이 내림 차순 asc, desc는 오름 차순 */
 
-
-
-
-
-
-
-
+  SELECT first_name, last_name, salary
+    FROM employees
+ORDER BY salary DESC, first_name ASC;
